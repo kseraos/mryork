@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+body{
+    margin: 0px;
+    /* height: auto; */
+    font-weight: 400;
+    line-height: 1.7;
+    color: #2e2c2c;
+    background-color: #F2F2F2;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    max-width: 100%;
+    zoom: 2;
+}
+
+.logo{
+    padding: 0px;
+    width: 25%;
+    height: 89%;
+    border-radius: 5px;
+}
+
+
+.nav{
+    padding: 0px;
+    border-bottom: 1px solid #cbcbcb;
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 2px, rgb(0 0 0 / 8%) 0px 4px 8px;
+    z-index: 350;
+    /* position: fixed;
+    right: 0;
+    top: 12%;
+    width: 100%;
+    margin-top: -2.5em; */
+    
+    
+}
+
+.area-principal{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 9px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.text{
+    padding: 10px 0px;
+    padding-left: 7%;
+    padding-bottom: 13px;
+    
+    /* margin-top: 20%; */
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 17px 0px ;
+    line-height: 3;
+}
+
+.telefone-input-input{
+    width: 100%;
+    border: 1px solid transparent !important;
+    margin: 0;
+    padding: 1px;
+    border: none;
+    border-radius: 4px;
+    height: 23px;
+    font-size: 7px;
+}
+.dados-input input{
+    padding: 3px;
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+    font-size: 9px;
+    font-weight: 300;
+   
+}
+.dados-input input:focus-visible{
+    outline: 1px solid #d89d7559;
+}
+
+.telefone-input-input:focus-visible{
+    outline: 1px solid #aeafb3 ;
+    /* border-radius: 5px; */
+    
+ }
+
+ .telefone-input-input::placeholder{
+    color: #817d7dbe;
+
+ }
+ .telefone-input label{
+    font-size: 9px;
+    font-weight: 300;
+    color: #D89D75
+ }
+
+.botao-submit{
+    border: none;
+    background-color: #20242F;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 93%;
+    color: #F2F2F2;
+    font-size: 8px;
+    align-self: center;
+}
+
+.botao-submit:hover{
+    background-color: #172a61 ;
+}
+
+.botao-submit:hover button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+.titulo h1{
+    font-size: 12px;
+    text-align: left;
+    color: #172a61 !important;
+    font-weight: 400;
+}
+
+.telefone-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+.icon-menu{
+    padding: 0px !important;
+    font-size: 17px !important;
+}
+
+.form{
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+    margin: auto;
+    line-height: 2.5;
+}
+
+#section-inicio{
+    height: 100%;
+}
+
+.button-inicia{
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    margin-top: 17px;
+    height: 20px;
+}
+.dados-input{
+    color: #9a9896;
+    font-size: 8px;
+    padding: 1px 10px;
+    padding-left: 0px;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.dados-input::placeholder{
+    color: #817d7dbe;
+
+
+ }
+.tax-dog{
+    display: flex;
+    font-size: 9px;
+    padding: 3px 3px !important;
+}
+.taxdog{
+    width: 9px !important; 
+    margin-right: 5px;
+}
+.dados-input .botao-submit{
+    margin: 10px;
+}
+.titulo-cadastro h1{
+    font-size: 12px;
+    text-align: left;
+    color: #172a61 !important;
+}
+
+.voltar{
+
+
+font-size: 9px;
+padding: 3px;
+color: #20242f;
+font-weight: bold;
+font-family: sans-serif;
+}
+
+#section-cadastro-com-dog,#section-com-cadastro, #section-semcadastro-semdog, #section-cadastro{
+    height:  100%;
+}
+
+#section-agenda{
+    height:  100%;
+}
+
+.nome-expor{
+    font-size: 10px;
+}
+.p-aviso{
+    font-size: 5px;
+}
+
+.button-adiciona{
+    border: 2px solid #aeafb3;
+    border-radius: 2px;
+    font-weight: 200;
+    font-size: 6px;
+    padding: 3px;
+    background: #aeafb3;
+}
+
+.div-horario{
+    display: flex;
+    flex-wrap: wrap;
+    width: 122px;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+}
+h1 {
+    font-size:3em; 
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #4DC3FA;
+  }
+  
+  h2 {
+    font-size:1em; 
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+    color: #FB667A;
+  }
+  
+  h2 a {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FB667A;
+    text-decoration: none;
+  }
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+    font-weight: bold;
+    font-size: 1em;
+  text-align: left;
+  color: #20242f;
+  
+}
+
+.container td {
+    font-weight: normal;
+    font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+     -moz-box-shadow: 0 2px 2px -2px #0E1119;
+          box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+    text-align: left;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+  display: table;
+  padding: 0 0 3px 0;
+  font-size: 9px;
+}
+
+.container td, .container th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+  padding-left:2%;  
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+    background-color: #cbcbcb5c;
+}
+
+.container th {
+    background-color: #cbcbcb5c;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* .container td:first-child { color: #FB667A; } */
+
+.container tr:hover {
+   background-color: #f5f5f5e1;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+     -moz-box-shadow: 0 6px 6px -6px #0E1119;
+          box-shadow: 0 6px 6px -6px #0E1119;
+          
+}
+
+.container td:hover {
+  background-color: #D89D75;
+  color: #403E10;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: #c5926f -1px 1px, #c5926f -2px 2px, #c5926f -3px 3px, #c5926f -4px 4px, #c5926f -5px 5px, #c5926f -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+  transition-timing-function: line;
+}
+
+.class-ck{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+}
+
+.checkbox{
+    width: 9px !important;
+    margin-right: 5px;
+}
+.label-checkbox{
+    display: flex;
+    margin-right: 5px;
+}
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    font-weight: 200;
+    color: #000;
+    border-bottom: 0.5px solid #aeafb3;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  #date{
+    border: 0.5px solid #aeafb3;
+    background: none;
+    display: block;
+    width: 100px;
+    outline: none;
+    color: #aeafb3;
+    border-radius: 4px;
+    transition: 250ms width ease, 250ms border-color ease;
+  }
+  /************** 
+     On Hover
+  ***************/
+  #date:hover{
+    width: 100px;
+  }
+  /************** 
+     On Focus
+  ***************/
+  #date:focus{
+    width: 100px;
+    border-color: #aeafb3;
+  }
+
+  .add-pet{
+    width: 50%;
+    font-size: 7px;
+    float: left;
+    margin-left: 5px;
+    align-self: flex-start;
+    font-size: 6px;
+    background: #d89d757d;
+    color: #172a61;
+    font-weight: 500;
+  }
+  .div-endereco{
+    display: grid;
+    grid-auto-rows: 24px;
+  }
+
+  
+
+
+@media screen and (max-width: 574px){
+    body{
+        max-width: 100%;
+        
+    }
+    
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .telefone-input label{
+        font-size: 14px;
+        color: red;
+        
+    }
+    .titulo h1{
+        font-size: 20px;
+    }
+    .telefone-input-input{
+        font-size: 12px;
+    }
+    .p-aviso{
+        font-size: 7px;
+    }
+    .dados-input{
+        font-size: 12px;
+    }
+    .dados-input input {
+        font-size: 12px;
+    }
+   }
+
+
+   
