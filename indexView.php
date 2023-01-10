@@ -143,7 +143,7 @@
                 </div>
                 <div class="dados-input">
                     <!-- <label for="numero">N°</label>   -->
-                    <input type="text" name="numero" id="numero" placeholder="N°">
+                    <input type="text" name="casa_numero" id="casa_numero" placeholder="N°">
                     
                 </div>
                 <div class="dados-input">
@@ -227,67 +227,6 @@
             <div action="" class="form">
                 <div class="nome-expor">Olá, Kristine</div>
                 <p class="p-aviso">Selecione o pet para qual deseja fazer o agendamento</p>
-
-                <script>
-                
-                $(document).on("click", "#section-com-cadastro .avanca", function(e) {
-                                telefoneinicial = $("#telefoneinicial").val();
-                                dogsselecionados = [];
-                                $.ajax({
-                                    url:"?Ctrl&action=buscarTelefone&telefone="+telefoneinicial, 
-                                    type: "GET",
-                                    dataType: 'json',
-                                    success: function (data) {
-                                        
-                                        if(data){
-                                            registros = data.registros *1;
-                                            
-                                            if(registros>0){
-                                                
-                                                d = data.dados
-                                                d = d[0];                                        
-                                                
-                                              registros = data.dogsqtd *1;
-                                                if(registros>0){
-
-                                                    
-                                                    if(data.dogs.registros > 0 ){
-                                                        
-                                                        dogdos = data.dogs.dados;
-                                                        
-                                                       
-                                                        $.each(dogdos,function(i,v){
-                                                           
-                                                            dogsselecionados[v.id] = v                                                        
-                                                            $('#petsdotor').append("<label><input name='dog_id' type='checkbox' class='taxdog pet_selecionado' value='"+v.id+"'> "+v.nome_pet+"</label>");
-                                                        })
-                                                           
-                                                    }else{
-                                                        $('#petsdotor').hide();
-                                                    }
-                                                }
-
-                                            }else{
-                                            }
-
-
-                                        }
-                                    },
-                                    error: function(e){	
-                                        console.log(e)
-                                    }
-                                }).done(function(){
-                                    
-                                    //  notificX($('#buscando')); 
-                                });
-                                    
-                                    
-                            
-                            
-                        })
-                    </script>
-
-
                 
                 <div class="dados-input tax-dog" style="flex-direction: column" id='petsdotor'>
                     
@@ -330,7 +269,7 @@
                     <p class="p-aviso">Precisamos de algumas informações do seu pet.</p>
                     
                     <div class="dados-input">
-                        <input type="text" id="nome" name='nome_pet' placeholder="Nome do seu PET" >
+                        <input type="text" id="nome_pet" name='nome_pet' placeholder="Nome do seu PET" >
                     </div>
 
                     <div class="dados-input">
@@ -359,10 +298,10 @@
                         <strong>Sexo</strong>
                      <div class="class-ck">
                         <label for="sexo-macho" class="label-checkbox">
-                            <input type="radio" name="sexo" value='m' id="sexo-macho" class="checkbox">Macho
+                            <input type="radio" name="sexo" value='m' class="checkbox">Macho
                         </label>
                         <label for="sexo-femea" class="label-checkbox">
-                            <input type="radio" name="sexo" value='f' id="sexo-femea" class="checkbox">Femea
+                            <input type="radio" name="sexo" value='f' class="checkbox">Femea
                         </label>
                      </div>
                     </div>

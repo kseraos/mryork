@@ -1,3 +1,6 @@
+        codigoValidacao = 0;
+        db_cliente  = [];
+        db_dogs  = [];
         //ACÃO DE CLICK
           $(document).ready(function(){
             $('section').not($('#section-inicio')).hide();
@@ -25,155 +28,12 @@
 
                 
                 dogsselecionados = [];
-                $.ajax({
-                   
-                  url:"?Ctrl&action=buscarTelefone&telefone="+ datat, 
-                  type: "GET",
-                  dataType: 'json',
-                  
-                  success: function (data) {
-                
-                          if(data){
-                            registros = data.registros *1;
-                            
-                            if(registros>0){
-                                
-                                d = data.dados
-                                d = d[0];         
-                                                       
-                                
-                              registros = data.dogsqtd *1;
-                                
-                                if(registros>0){
 
-                                    
-                                    if(data.dogs.registros > 0 ){
-                                        
-                                      $.each(dogdos,function(i,v){
-                                        dogsselecionados[v.id] = v                                                           
-
-                                       if(data.dogs.registros == 1){
-                                    
-                                        d = data.dados
-                                        d = d[0];
-                                              $("#cliente_id").val(d.id);
-                                               $("#telefone1").val(d.telefone1);
-                                               $("#telefone2").val(d.telefone2);
-                                               $("#nome").val(d.nome);
-                                               $("#casa_numero").val(d.casa_numero);
-                                               $("#cep").val(d.cep);
-                                               $("#rg").val(d.rg);
-                                               $("#cnpj_cpf").val(d.cnpj_cpf);
-                                               $("#complemento").val(d.complemento);
-                                               $("#endereco").val(d.endereco);
-                                               $("#bairro").val(d.bairro);
-                                               $("#cidade").val(d.cidade);
-                                               $("#estado").val(d.estado);
-                                               $("#nome").focus();                                       
-                                            petSelecionado = dogsselecionados[v.id];
-                                            $("#petsdotor").val(petSelecionado.id);
-                                            $("#nome_pet").val(petSelecionado.nome_pet);
-                                            $("#raca").val(petSelecionado.raca);
-                                            $("input[name=sexo][value='" + petSelecionado.sexo + "']").prop("checked",true);
-                                            $("#nascimento").val(petSelecionado.nascimento);
-                                            $("#idade").val(petSelecionado.idade);
-                                            $("input[name=porte][value='" + petSelecionado.porte + "']").prop("checked",true);
-                                            $("input[name=pelagem][value='" + petSelecionado.pelagem + "']").prop("checked",true);
-                                            $("#obs_dog").val(petSelecionado.obs_dog);
-                                   
-                                       }
-                                      }); 
-                                    
-                                    
-                                    }}}}
+                $('#section-cadastro-com-dog').hide();
+                $('#section-agenda').show();
 
 
-                                  $('#section-cadastro-com-dog').hide();
-                                  $('#section-agenda').show();
-                                  
-                                  
-                                  }})});
-           
-
-                                  // $(document).on("click", "#section-cadastro-com-dog .avanca", function(e) {
-
-                                  //   $(document).on("click", ".button-adiciona", function(e) {
-
-                                  //     $.ajax({
-                                     
-                                  //       url:"?Ctrl&action=buscarTelefone&telefone="+ datat, 
-                                  //       type: "GET",
-                                  //       dataType: 'json',
-                                  //       success: function (data) {
-                                  //     if(data){
-                                  //       registros =data.registros *1;
-                                       
-                                              
-                                  //           if(registros > 0){
-                                  //             if(data){
-                                  //               registros = data.registros *1;
-                                                
-                                  //               if(registros>0){
-                                                    
-                                  //                   d = data.dados
-                                  //                   d = d[0];                                        
-                                                    
-                                  //                 registros = data.dogsqtd *1;
-                                  //                   if(registros>0){
-                    
-                                                        
-                                  //                       if(data.dogs.registros > 0 ){
-                                                            
-                                  //                         $.each(dogdos,function(i,v){
-                                  //                           dogsselecionados[v.id] = v                                                           
-                    
-                                  //                          if(data.dogs.registros == 1){
-                                  //                           d = data.dados
-                                  //                           d = d[0];
-                    
-                                  //                                 $("#cliente_id").val(d.id);
-                                  //                                  $("#telefone1").val(d.telefone1);
-                                  //                                  $("#telefone2").val(d.telefone2);
-                                  //                                  $("#nome").val(d.nome);
-                                  //                                  $("#casa_numero").val(d.casa_numero);
-                                  //                                  $("#cep").val(d.cep);
-                                  //                                  $("#rg").val(d.rg);
-                                  //                                  $("#cnpj_cpf").val(d.cnpj_cpf);
-                                  //                                  $("#complemento").val(d.complemento);
-                                  //                                  $("#endereco").val(d.endereco);
-                                  //                                  $("#bairro").val(d.bairro);
-                                  //                                  $("#cidade").val(d.cidade);
-                                  //                                  $("#estado").val(d.estado);
-                                  //                                  $("#nome").focus();                                       
-                                  //                               petSelecionado = dogsselecionados[v.id];
-                                  //                               $("#petsdotor").val(petSelecionado.id);
-                                  //                               $("#nome_pet").val(petSelecionado.nome_pet);
-                                  //                               $("#raca").val(petSelecionado.raca);
-                                  //                               $("input[name=sexo][value='" + petSelecionado.sexo + "']").prop("checked",true);
-                                  //                               $("#nascimento").val(petSelecionado.nascimento);
-                                  //                               $("#idade").val(petSelecionado.idade);
-                                  //                               $("input[name=porte][value='" + petSelecionado.porte + "']").prop("checked",true);
-                                  //                               $("input[name=pelagem][value='" + petSelecionado.pelagem + "']").prop("checked",true);
-                                  //                               $("#obs_dog").val(petSelecionado.obs_dog);
-                                                       
-                                  //                             }
-                                  //                           }); 
-                                                          
-                                                          
-                                  //                         }}}}}}
-                      
-                      
-                    
-                    
-                                  //                       $('#section-cadastro-com-dog').hide();
-                                  //                        $('#section-agenda').show();
-                                                      
-                                                      
-                                  //                     }})}) });
-                  
-  
-
-             
+              })
 
               $(document).on("click", "#section-semcadastro-semdog .voltar", function(e) {
 
@@ -203,81 +63,11 @@
                   });
 
                   $(document).on("click", ".button-adiciona", function(e) {
-
-                    $.ajax({
-                   
-                      url:"?Ctrl&action=buscarTelefone&telefone="+ datat, 
-                      type: "GET",
-                      dataType: 'json',
-                      success: function (data) {
-                    if(data){
-                      registros =data.registros *1;
-                     
-                            
-                          if(registros > 0){
-                            if(data){
-                              registros = data.registros *1;
-                              
-                              if(registros>0){
-                                  
-                                  d = data.dados
-                                  d = d[0];                                        
-                                  
-                                registros = data.dogsqtd *1;
-                                  if(registros>0){
-  
-                                      
-                                      if(data.dogs.registros > 0 ){
-                                        
-                                          
-                                        $.each(dogdos,function(i,v){
-                                          dogsselecionados[v.id] = v   
-                                                                               
-  
-                                         if(data.dogs.registros == 1){
-                                          d = data.dados
-                                          d = d[0];
-
-  
-                                                $("#cliente_id").val(d.id);
-                                                 $("#telefone1").val(d.telefone1);
-                                                 $("#telefone2").val(d.telefone2);
-                                                 $("#nome").val(d.nome);
-                                                 $("#casa_numero").val(d.casa_numero);
-                                                 $("#cep").val(d.cep);
-                                                 $("#rg").val(d.rg);
-                                                 $("#cnpj_cpf").val(d.cnpj_cpf);
-                                                 $("#complemento").val(d.complemento);
-                                                 $("#endereco").val(d.endereco);
-                                                 $("#bairro").val(d.bairro);
-                                                 $("#cidade").val(d.cidade);
-                                                 $("#estado").val(d.estado);
-                                                 $("#nome").focus();                                       
-                                              petSelecionado = dogsselecionados[v.id];
-                                              $("#petsdotor").val(petSelecionado.id);
-                                              $("#nome_pet").val(petSelecionado.nome_pet);
-                                              $("#raca").val(petSelecionado.raca);
-                                              $("input[name=sexo][value='" + petSelecionado.sexo + "']").prop("checked",true);
-                                              $("#nascimento").val(petSelecionado.nascimento);
-                                              $("#idade").val(petSelecionado.idade);
-                                              $("input[name=porte][value='" + petSelecionado.porte + "']").prop("checked",true);
-                                              $("input[name=pelagem][value='" + petSelecionado.pelagem + "']").prop("checked",true);
-                                              $("#obs_dog").val(petSelecionado.obs_dog);
-                                     
-                                            }
-                                          }); 
-                                        
-                                        
-                                        }}}}}}
-    
-    
-  
   
                                       $('#section-cadastro-com-dog').hide();
                                       $('#section-semcadastro-semdog').show();
                                     
-                                    
-                                    }})});
+                  });
 
                   
 
@@ -294,36 +84,17 @@
 
 
                   function deletar_entrada() {
-              
-                    var d ={}
-                    d.action = 'GerarCodigoTelefone'
-                    d.verificar = $("#codigo_telefone").val();
-                   
-
-                    $.ajax({
-                   
-                      url:"?Ctrl", 
-                      type: "POST",
-                      dataType: 'json',
-                      data:d,
-                     
-                      success: function (res) {
-                        if(d.verificar == res.codigo){
+                    codigoDigitado = $("#codigo_telefone").val();
+                    // console.log(codigoValidacao);
+                    // console.log(codigoDigitado);
+                        if(codigoDigitado == codigoValidacao){
                           $('#section-com-cadastro').hide();
                           $('#section-cadastro-com-dog').show();
                         }else{
                           alert("codigo errado")
                         }
 
-                      }
-
-
-                    
-                    })
-                    };
-
-
-
+                      };
 
                   // ----- 
 
@@ -366,23 +137,23 @@
 
                     $(document).on("click", ".gerarcodigo", function(e) {
                 
-                      codigo = getRandomIntInclusive(1000,9999);
-                      
-                      alert(codigo);
-                     $.ajax({
+                      codigoValidacao = getRandomIntInclusive(1000,9999);
+                      alert(codigoValidacao);
+                      $("#codigo_telefone").text(codigo_telefone);
+                    //  $.ajax({
                    
-                       url:"?Ctrl&action=GerarCodigoTelefone&codigotelefone="+ codigo, 
-                       type: "GET",
-                       dataType: 'json',
+                    //    url:"?Ctrl&action=GerarCodigoTelefone&codigotelefone="+ codigoValidacao, 
+                    //    type: "GET",
+                    //    dataType: 'json',
                       
                        
-                       success: function (data) {
+                    //    success: function (data) {
                         
                             
       
-                       }
+                    //    }
                      
-                     })
+                    //  })
                     
                     });
 
@@ -399,28 +170,55 @@
 
                     $(document).on("click", ".verificartelefone", function(e) {
 
-                      
+                      dogsselecionados=[];
                       datat = $("#telefoneinicial").val();
                        $("#telefone1").val(datat);
                        $("#telefone2").val(datat);
      
                       
                       datat = datat.replace(/[^0-9]/g,'');
-                   
-                     
+                      datat = datat.substr(0,5)+'-'+datat.substr(5,4);
+                                        
                      $.ajax({
-                   
                        url:"?Ctrl&action=buscarTelefone&telefone="+ datat, 
                        type: "GET",
                        dataType: 'json',
                        
                        success: function (data) {
                        if(data){
-                         registros =data.registros *1;
+                         registros = data.registros *1;
                          
-                               
+                            $(".nome-expor").html('Olá, ' + data['dados'][0]['nome'])     
                              if(registros > 0){
-     
+                              db_cliente  = data['dados'];
+
+                              db_dogs  = data['dogs'];
+                              d = db_cliente[0];
+                              // console.log(d);
+                              $("#cliente_id").val(d.id);
+                              $("#telefone1").val(d.telefone1);
+                              // $("#telefone2").val(d.telefone2);
+                              $("#nome").val(d.nome);
+                              $("#casa_numero").val(d.casa_numero);
+                              $("#cep").val(d.cep);
+                              $("#rg").val(d.rg);
+                              $("#cnpj_cpf").val(d.cnpj_cpf);
+                              $("#complemento").val(d.complemento);
+                              $("#endereco").val(d.endereco);
+                              $("#bairro").val(d.bairro);
+                              $("#cidade").val(d.cidade);
+                              $("#estado").val(d.estado);
+                              
+                              dogdos = data.dogs.dados;
+                                                        
+                                                       
+                              $.each(dogdos,function(i,v){
+                                 
+                                  dogsselecionados[v.id] = v                                                        
+                                  $('#petsdotor').append("<label><input name='pet_id' type='radio' class='taxdog pet_selecionado' value='"+v.id+"'> "+v.nome_pet+"</label>");
+                              })
+
+
                                $('#section-inicio').hide();
                                $('#section-com-cadastro').show();
      
@@ -433,7 +231,40 @@
                      }}});
                    }
                    )
+    $(document).on("click", ".pet_selecionado", function(e) {
+
+
+      selecionado =  $(this).val();
+          // console.log(selecionado);
+          // console.log(dogsselecionados);
+          if(selecionado == "novo" || selecionado == "0"){
+              $("#nome_pet").focus();
+
+              $("#nome_pet").val('').css("color","");
+              $("#raca").val(0).css("color","");
+              $("input[name=sexo]").prop("checked",false).css("color","");
+              $("#nascimento").val('').css("color","");
+              $("#idade").val(0).css("color","");
+              $("input[name=porte]").prop("checked",false).css("color","");
+              $("input[name=pelagem]").prop("checked",false).css("color","");
+              $("#obs_dog").val('').css("color","");
+
+          }else{
+              
+              petSelecionado = dogsselecionados[selecionado];
+              $("#nome_pet").val(petSelecionado.nome_pet).css("color","rgb(0, 152, 7)");
+              $("#raca").val(petSelecionado.raca).css("color","rgb(0, 152, 7)");
+              $("input[name=sexo][value='" + petSelecionado.sexo + "']").prop("checked",true).css("color","rgb(0, 152, 7)");
+              $("#nascimento").val(petSelecionado.nascimento).css("color","rgb(0, 152, 7)");
+              $("#idade").val(petSelecionado.idade).css("color","rgb(0, 152, 7)");
+              $("input[name=porte][value='" + petSelecionado.porte + "']").prop("checked",true).css("color","rgb(0, 152, 7)");
+              $("input[name=pelagem][value='" + petSelecionado.pelagem + "']").prop("checked",true).css("color","rgb(0, 152, 7)");
+              $("#obs_dog").val(petSelecionado.obs_dog).css("color","rgb(0, 152, 7)");
+            
+      
+          }
     
+     });
 
 
           // ------
@@ -449,7 +280,7 @@
               function mtel(v){
                   v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
                   // v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
-                  // v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+                   v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
                   return v;
               }
               function id( el ){

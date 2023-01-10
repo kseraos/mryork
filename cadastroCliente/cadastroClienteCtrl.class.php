@@ -66,8 +66,6 @@ class  cadastroClienteCtrl extends cadastroCliente {
             $comanda['checkin_id'] =  $c['checkin_id'];
             $c['id'] =  $c['checkin_id'];
             $itens_salvos = parent::SalvarItens($c);
-             $comanda = $c;
-            $c['comanda_id']  = parent::SalvarComanda($comanda);
         }
 //		if($retorno>0){
 //			
